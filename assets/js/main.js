@@ -41,7 +41,7 @@
   function downloadCV() {
     // Create a link element
     var link = document.createElement('a');
-    link.setAttribute('href', 'assets/img/RAMZI RIHANE CV.pdf');
+    link.setAttribute('href', 'RAMZI_RIHANE CV_ F.pdf');
     link.setAttribute('download', 'Ramzi_Rihane_CV.pdf');
 
     // Simulate click on the link to trigger download
