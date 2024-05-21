@@ -738,7 +738,7 @@
             })();
          function sendMail() {
             // Retrieve form input values
-          
+             event.preventDefault();
             var params = {
                 from_name: document.getElementById("name").value,
                 object: document.getElementById("subject").value,
