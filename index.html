@@ -102,7 +102,7 @@
               </ul>
             </div>
 
-           <script>
+     <script>
     function calculateAge(birthdate) {
       // Parse the birthdate string
       let birthDate = new Date(birthdate);
@@ -123,9 +123,22 @@
       return age;
     }
 
-    // Calculate the age and update the span element
-    let myBirthdate = '1998-09-16';
-    document.getElementById('age').innerText = calculateAge(myBirthdate);
+    // Ensure the DOM is fully loaded before running the script
+    document.addEventListener('DOMContentLoaded', (event) => {
+      console.log("DOM fully loaded and parsed");
+
+      // Calculate the age and update the span element
+      let myBirthdate = '1998-09-16';
+      let ageSpan = document.getElementById('age');
+
+      // Check if the element is found
+      if (ageSpan) {
+        ageSpan.innerText = calculateAge(myBirthdate);
+        console.log("Age calculated and inserted:", ageSpan.innerText);
+      } else {
+        console.log("Element with id 'age' not found");
+      }
+    });
   </script>
             <div class="col-lg-6">
               <ul>
