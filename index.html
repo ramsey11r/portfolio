@@ -102,33 +102,31 @@
               </ul>
             </div>
 
-            <script>
-              function calculateAge(birthdate) {
-    // Parse the birthdate string
-    let birthDate = new Date(birthdate);
-    
-    // Get today's date
-    let today = new Date();
-  
-    // Calculate the age
-    let age = today.getFullYear() - birthDate.getFullYear();
-    let monthDifference = today.getMonth() - birthDate.getMonth();
-    let dayDifference = today.getDate() - birthDate.getDate();
-  
-    // Adjust age if today's date hasn't reached the birthdate yet in the current year
-    if (monthDifference < 0 || (monthDifference === 0 && dayDifference < 0)) {
-      age--;
+           <script>
+    function calculateAge(birthdate) {
+      // Parse the birthdate string
+      let birthDate = new Date(birthdate);
+      
+      // Get today's date
+      let today = new Date();
+
+      // Calculate the age
+      let age = today.getFullYear() - birthDate.getFullYear();
+      let monthDifference = today.getMonth() - birthDate.getMonth();
+      let dayDifference = today.getDate() - birthDate.getDate();
+
+      // Adjust age if today's date hasn't reached the birthdate yet in the current year
+      if (monthDifference < 0 || (monthDifference === 0 && dayDifference < 0)) {
+        age--;
+      }
+
+      return age;
     }
-  
-    return age;
-  }
-  
-  // Example usage:
-  let myBirthdate = '1998-09-16';
-               document.getElementById('age').innerText = calculateAge(myBirthdate);
-  console.log(calculateAge(myBirthdate));  // Outputs your age
-  
-                      </script>
+
+    // Calculate the age and update the span element
+    let myBirthdate = '1998-09-16';
+    document.getElementById('age').innerText = calculateAge(myBirthdate);
+  </script>
             <div class="col-lg-6">
               <ul>
                 <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span id="age"></span></li>
